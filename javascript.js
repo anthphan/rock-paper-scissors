@@ -20,34 +20,19 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay().toLowerCase();
     playerSelection = playerSelection.toLowerCase();
 
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock"
-    }
-    else if (playerSelection === computerSelection) {
+    console.log(playerSelection);
+    console.log(computerSelection);
+
+    if (playerSelection === computerSelection) {
         return "Its a tie!"
-    }
-    else {
-        return "You Win! Rock beats Scissors"
     }
 
-    if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper"
-    }
-    else if (playerSelection === computerSelection) {
-        return "Its a tie!"
+    if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors")
+        || (playerSelection === "scissors" && computerSelection === "rock")) {
+        return "You Lose! " + computerSelection + " beats " + playerSelection;
     }
     else {
-        return "You Win! Paper beats Rock"
-    }
-
-    if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors"
-    }
-    else if (playerSelection === computerSelection) {
-        return "Its a tie!"
-    }
-    else {
-        return "You Win! Scissors beats Paper"
+        return "You Win! " + playerSelection + " beats " + computerSelection;
     }
 }
 
